@@ -9,7 +9,7 @@ package com.schoenmaeker;
  *
  * //----------------------------------------------------//
  * // Dénombrer les lettres de l'alphabet dans un tableau
- * // Voir FOAD_Algo
+ * // 
  */
 
 public class Algo_3_3 {
