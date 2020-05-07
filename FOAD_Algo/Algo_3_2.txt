@@ -1,0 +1,22 @@
+//----------------------------------------------------//
+// Rechercher une lettre dans une chaine de caractères
+
+début
+//chaine <-- "."
+cpt_occ <-- 0 // compteur occurences
+l  <-- longeur(chaine)
+
+Pour i = 0 à l
+    lettre <-- chaine[i]
+    Si lettre = "a"
+        cpt_occ++ // compteur occurences
+    fin Si
+fin Pour
+
+si chaine = "."
+    écrire "LA CHAINE EST VIDE"
+Sinon
+    écrire "Le nombre de a contenu dans la chaine est de ", cpt_occ
+fin Sinon
+
+fin

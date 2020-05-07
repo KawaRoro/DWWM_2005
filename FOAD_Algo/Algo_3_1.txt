@@ -1,0 +1,17 @@
+//----------------------------------------------------//
+// Rechercher un nombre dans un tableau
+
+début
+tableau t // contient les éléments à vérifier
+réel N // information donnée
+valeur_retour = vr = "" // Variable temporaire pour différer la réponse de la boucle
+
+Pour i = 0 à t
+    Faire t[i] = N
+    vr <-- t
+fin Pour
+
+Si vr différent de rien
+    Écrire "Le chiffre correspondant est ", vr
+Sinon Écrire "Non trouvé"
+fin
