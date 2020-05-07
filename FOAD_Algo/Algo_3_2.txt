@@ -3,6 +3,7 @@
 
 début
 //chaine <-- "."
+chaine lettre
 cpt_occ <-- 0 // compteur occurences
 l  <-- longeur(chaine)
 
