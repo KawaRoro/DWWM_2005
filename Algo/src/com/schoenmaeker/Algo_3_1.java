@@ -1,6 +1,6 @@
 package com.schoenmaeker;
 
-import java.util.Scanner;
+//import java.util.Scanner;
 
 /**
  * @author Schoenmaeker
@@ -17,24 +17,21 @@ public class Algo_3_1 {
 	// Exercice le périmétre d'un rectangle
 	public static void main(String[] args) {
 		
-		//int x, y;
-		int réel;
+		int[] tabElement = {1, 2, 3, 4, 5};
+		int n = 2; // information donnée
+		int return_value = 0;
 		
-		//boolean binaire = false;
+		for(int i = 0; i < tabElement.length ; i++ ) {
+			if(tabElement[i]==n) {
+				return_value = n;
+			}
+		}
 		
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Entrer votre premier nombre:");
-		int x = sc.nextInt();
-		System.out.println("Vous avez saisi : "+ x);
-		
-		System.out.println("Entrer votre deuxième nombre:");
-		int y = sc.nextInt();
-		System.out.println("Vous avez saisi : "+ y);
-		sc.close();
-		
-		réel = (x + y)/2;
-		
-		System.out.println("La moyenne des deux nombres est : "+ réel);
+		if(return_value == n) {
+			System.out.println("L'élément à été trouvé : "+ n);
+		}else {
+			System.out.println("Non trouvé");
+		}
 		
 	}
 	
