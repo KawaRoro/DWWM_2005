@@ -22,7 +22,7 @@ public class Algo_3_6 {
 	
 	public static final Random RANDOM = new Random();
 	// Nombre de possibilités
-	public static final int MAX_ERRORS = 8;
+	public static final int MAX_ERRORS = 6;
 	// Mot à trouver
 	private String word_to_find;
 	// Lettres trouvées contenu dans un tableau
