@@ -14,11 +14,11 @@ public class Algo_3_1 {
 	/**
 	 * @param args
 	 */
-	// Exercice le périmétre d'un rectangle
+	// Exercice
 	public static void main(String[] args) {
 		
 		int[] tabElement = {1, 2, 3, 4, 5};
-		int n = 2; // information donnée
+		int n = 2; // information donnÃ©e
 		int return_value = 0;
 		
 		for(int i = 0; i < tabElement.length ; i++ ) {
@@ -28,9 +28,9 @@ public class Algo_3_1 {
 		}
 		
 		if(return_value == n) {
-			System.out.println("L'élément à été trouvé : "+ n);
+			System.out.println("L'Ã©lÃ©ment trouvÃ©: "+ n);
 		}else {
-			System.out.println("Non trouvé");
+			System.out.println("Non trouvÃ©");
 		}
 		
 	}

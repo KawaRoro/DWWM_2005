@@ -8,7 +8,7 @@ package com.schoenmaeker;
  * @since 2020
  *
  * //----------------------------------------------------//
- * // Dénombrer les lettres de l'alphabet dans un tableau
+ * // DÃ©nombrer les lettres de l'alphabet dans un tableau
  * // 
  */
 
@@ -17,7 +17,7 @@ public class Algo_3_3 {
 	/**
 	 * @param args
 	 */
-	// Exercice le périmétre d'un rectangle
+	// Exercice
 	public static void main(String[] args) {
 		
 		String str_120_caract = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus consequat elementum. Pellentesque pulvinar tellus.";
@@ -28,7 +28,7 @@ public class Algo_3_3 {
 		
 		if(length_str >= 120) {
 			
-			// Deux boucles une pour le texte à lire et une autre pour l'alhpabet à vérifier
+			// Deux boucles une pour le texte Ã  lire et une autre pour l'alhpabet Ã  vÃ©rifier
 			for(int i = 0; i < length_str ; i++ ) {
 				char charAtNumber = str_120_caract.charAt(i);
 				
@@ -46,7 +46,7 @@ public class Algo_3_3 {
 			// Affichage du compte rendu
 			for(int e = 0; e < length_tab_alphabet ; e++ ) {
 				
-				System.out.println( "La lettre " +tab_alphabet[e] + " est présent " + tab_cpt_occ[e] + " fois");
+				System.out.println( "La lettre " +tab_alphabet[e] + " est prÃ©sent " + tab_cpt_occ[e] + " fois");
 				
 			}
 		}

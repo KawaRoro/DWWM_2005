@@ -8,7 +8,7 @@ package com.schoenmaeker;
  * @since 2020
  *
  * //----------------------------------------------------//
- * // Rechercher une lettre dans une chaine de caractères
+ * // Rechercher une lettre dans une chaine de caractï¿½res
  * // Voir FOAD_Algo
  */
 
@@ -17,7 +17,7 @@ public class Algo_3_2 {
 	/**
 	 * @param args
 	 */
-	// Exercice le périmétre d'un rectangle
+	// Exercice
 	public static void main(String[] args) {
 		
 		String str = "abc.";

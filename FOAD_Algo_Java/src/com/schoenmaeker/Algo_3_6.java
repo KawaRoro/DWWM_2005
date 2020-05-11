@@ -12,7 +12,7 @@ import java.util.Scanner;
  * // 
  */
 
-public class Algo_3_5 {
+public class Algo_3_6 {
 		
 	public static void main(String[] args) {
 		char reponse = ' ';
