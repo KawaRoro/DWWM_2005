@@ -1,0 +1,38 @@
+
+choix_joueur est un entier
+choix_ia est un entier
+score_joueur est un entier
+score_ia est un entier
+
+DEBUT
+	FAIRE
+		choix_ia <-- RANDOM
+		Ecrire "choisissez un chiffre entre 0, 1 et 2
+		Lire choix_joueur
+		SI choix_joueur EST INFERIEUR A 0 ALORS
+			ECRIRE "PARTIE TERMINEE"
+		SINON
+			SI choix_ia - choix_joueur est egal a 2 ALORS
+				score_ia += 1
+			Sinon SI choix_joueur - choix_ia est egal a 2 ALORS
+				score_joueur += 1
+			Sinon SI choix_ia - choix_joueur est egal a 1 ALORS
+				score_joueur += 1
+			Sinon SI choix_joueur - choix_ia est egal a 1 ALORS
+				score_ia += 1
+			SINON ALORS
+				ECRIRE "Aucun point n'est attribué !"
+			FIN SI
+		FIN SI
+	TANT QUE (score_ia est INFERIEUR A 10) ET (score_joueur est INFERIEUR A 10) ET (choix_joueur EST SUPERIEUR OU EGAL A 0)
+	
+	ECRIRE "Le score de l'ia est: ", score_ia
+	ECRIRE "Le score du joueur est: ", score_joueur
+
+	IF score_ia EST SUPERIEUR A score_joueur ALORS
+		ECRIRE "L'IA à gagné"
+	SINON
+		 ECRIRE "Le joueur à gagné"
+	FIN SI
+
+FIN
