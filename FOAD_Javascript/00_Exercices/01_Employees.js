@@ -33,13 +33,108 @@
 
 
 /* COMPLÉTEZ LE PROGRAMME... */
-
+var cpt_id = 0;
 /**
  * @class Employee
  */
 class Employee
 {
-    // A vous de jouer...
+    constructor(id, lastname, firstname, role, salary, hiredate) {
+
+        this.id = id, // création d'un attribut "id"
+
+        this.lastname = lastname, // création d'un attribut "lastname"
+
+        this.firstname = firstname, // création d'un attribut "firstname"
+
+        this.createEmail = function(lastname, firstname) {
+            let short_firstname = firstname.substr(0, 1).toLocaleLowerCase(); // première lettre uniquement
+            let str_email = short_firstname+lastname.toLocaleLowerCase()+"@email.fr"; // composition de l'email
+            return str_email;
+        },
+
+        this.email = this.createEmail(this.lastname, this.firstname), // création d'un attribut "email"
+
+        this.role = role, // création d'un attribut "role"
+        
+        this.salary = salary, // création d'un attribut "salary"
+        this.getMonthlySalary = function(salary) {
+            monthSalary = salary / 12 * 0.75;
+            return monthSalary;
+        },
+
+        this.createObjDate = function(hiredate) {
+            let order_year_hiredate = hiredate.getFullYear(); //
+            let order_month_hiredate = hiredate.getMonth()+1; // 
+            let order_day_hiredate = hiredate.getDate(); // 
+            
+            hiredate = order_year_hiredate +"-"+ order_month_hiredate +"-"+ order_day_hiredate;
+
+            return hiredate;
+        },
+
+        this.hiredate = this.createObjDate(hiredate), // création d'un attribut "hiredate"
+
+        this.getSeniority = function(hiredate) {
+            var between_date_in_year = 0;
+            let between_date = Date.now() - hiredate.getTime(); // 
+            let between_date_in_days = between_date / (1000 * 3600 * 24);
+            console.log(between_date_in_days);
+            if(between_date_in_days > 365){
+                between_date_in_year = between_date_in_days / 365;
+                console.log(between_date_in_year);
+            }
+            
+
+            
+            return between_date;
+        }
+        this.seniority = this.getSeniority(hiredate);
+    }
+
+    get getId() {
+        return this.id;
+    }
+    get geLastname() {
+        return this.lastname;
+    }
+    get getFirstname() {
+        return this.firstname;
+    }
+    get getEmail() {
+        return this.email;
+    }
+    get getRole() {
+        return this.role;
+    }
+    get getSalary() {
+        return this.salary;
+    }
+    get getHiredate() {
+        return this.hiredate;
+    }
+
+    set setId(id) {
+        this.id = id;
+    }
+    set setLastname(lastname) {
+        this.lastname = lastname;
+    }
+    set setFirstname(firstname) {
+        this.firstname = firstname;
+    }
+    set setEmail(email) {
+        this.email = email;
+    }
+    set setRole(role) {
+        this.role = role;
+    }
+    set setSalary(salary) {
+        this.salary = salary;
+    }
+    set setHiredate(hiredate) {
+        this.hiredate = hiredate;
+    }
 }
 
 
