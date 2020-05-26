@@ -59,7 +59,7 @@ class Employee
         
         this.salary = salary, // création d'un attribut "salary"
         this.getMonthlySalary = function(salary) {
-            monthSalary = salary / 12 * 0.75;
+            let monthSalary = salary / 12 * 0.75;
             return monthSalary;
         },
 
@@ -77,17 +77,58 @@ class Employee
 
         this.getSeniority = function(hiredate) {
             var between_date_in_year = 0;
+            var between_date_in_month = 0;
+            var between_date_in_days = 0;
+            var result_date_in_year = 0;
+            var result_date_in_month = 0;
+            var result_date_in_days = 0;
+            var save_date_in_year = 0;
+            var save_date_in_month = 0;
+            var save_date_in_days = 0;
             let between_date = Date.now() - hiredate.getTime(); // 
-            let between_date_in_days = between_date / (1000 * 3600 * 24);
-            console.log(between_date_in_days);
-            if(between_date_in_days > 365){
-                between_date_in_year = between_date_in_days / 365;
-                console.log(between_date_in_year);
+            let str_between_date = "";
+            result_date_in_days = between_date / (1000 * 3600 * 24) ;
+
+
+            //console.log("Date in days -> " + result_date_in_days);
+
+            if(result_date_in_days > 365){
+                result_date_in_year = result_date_in_days / 365;
+                //console.log("Date in year -> " + result_date_in_year);
+                save_date_in_year = Math.trunc(result_date_in_year);
+
+                between_date_in_days = result_date_in_days - (Math.trunc(result_date_in_year)*365);
+                //console.log("between_date_in_days -> " + between_date_in_days);
+                result_date_in_days = between_date_in_days;
+            }else{
+                save_date_in_year = 0;
+            }
+
+            if(result_date_in_days > 30){
+                result_date_in_month = result_date_in_days / 30;
+                //console.log("Date in month -> " + result_date_in_month);
+                save_date_in_month = Math.trunc(result_date_in_month);
+
+                between_date_in_days = result_date_in_days - (Math.trunc(result_date_in_month)*30);
+                //console.log("between_date_in_days -> " + between_date_in_days);
+                //result_date_in_month = between_date_in_month;
+            }else{
+                save_date_in_month = 0;
+            }
+
+            save_date_in_days = Math.trunc(between_date_in_days);
+
+            if(save_date_in_year > 0) {
+                console.log("L'ancienneté de l'employé est de -> " + save_date_in_year + " ans, " + save_date_in_month + " mois, " +  save_date_in_days + " jours. " );
+            }else {
+                console.log("L'ancienneté de l'employé est de -> " + save_date_in_month + " mois, " +  save_date_in_days + " jours. " );
             }
             
+            str_between_date = save_date_in_year + "-" + save_date_in_month + "-" +  save_date_in_days;
 
-            
-            return between_date;
+            //console.log("Date in days -> " + result_date_in_days);
+
+            return str_between_date;
         }
         this.seniority = this.getSeniority(hiredate);
     }
@@ -143,7 +184,7 @@ class Employee
 
 
 /** @var Employee employee1 */
-var employee1 = new Employee(1, 'Doe', 'John', 'manager', 82000, new Date('2020-12-28')); // création d'un nouvel employé
+var employee1 = new Employee(1, 'Doe', 'John', 'manager', 82000, new Date('1982-12-28')); // création d'un nouvel employé
 
 /** @var array employees */
 const employees = [employee1]; // tableau contenant les employés
@@ -159,6 +200,61 @@ console.log(employees); // export des employés dans la console
 
 // Écrivez votre code à partir de la ligne suivante...
 
+var employee1 = new Employee(1, 'Doe', 'John', 'manager', 82000, new Date('1982-12-28')); // création d'un nouvel employé
+var employee2 = new Employee(2, 'Jenniard', 'Johnathan', 'première classe', 65000, new Date('2020-01-01'));
+var employee3 = new Employee(3, 'Schoenmaeker', 'Benjamin', 'administrateur', 200000, new Date('2004-05-06'));
+var employee4 = new Employee(4, 'Hamza', 'Réda', 'graphiste', 82000, new Date('1994-12-28'));
+var employee5 = new Employee(5, 'Boudier', 'Aurélien', 'salarié', 70000, new Date('1976-12-28'));
+
+const tab_employees = [employee1, employee2, employee3, employee4, employee5];
+
+for(var i = 0; i < tab_employees.length; i++){
+    //var_temp_salary = tab_employees[i].salary;
+    console.log("Prénom-> " + tab_employees[i].firstname + " Nom -> " + tab_employees[i].lastname + " Email -> " + tab_employees[i].email +  " Ancienneté -> " + tab_employees[i].seniority +  " Salaire mensuel -> " + tab_employees[i].getMonthlySalary(tab_employees[i].salary) );
+}
+
+// Calcul du plus ancien
+var save_high_old = 0;
+var id_high_old = 0;
+for(var i = 0; i < tab_employees.length; i++){
+    //console.log(tab_employees[i].seniority);
+
+    tab_old_employee = tab_employees[i].seniority.split('-');
+
+    if(tab_old_employee[0] > save_high_old){
+        save_high_old = tab_old_employee[0];
+        id_high_old = i;
+    }
+    
+}
+
+console.log("Le plus ancien salarié est " + tab_employees[id_high_old].firstname + " " + tab_employees[id_high_old].lastname + " avec " + save_high_old + " ans de joyeux services ");
+
+// Calcul du haut salaire
+var save_high_salary = 0;
+var id_high_salary = 0;
+for(var i = 0; i < tab_employees.length; i++){
+    if(tab_employees[i].salary > save_high_salary){
+        save_high_salary = tab_employees[i].salary;
+        id_high_salary = i;
+    }
+    
+}
+
+console.log("Le plus haut salaire est de " + tab_employees[id_high_salary].firstname + " " + tab_employees[id_high_salary].lastname + " avec " + save_high_salary + " € ");
+
+// Calcul du bas salaire
+var save_low_salary = tab_employees[0].salary;
+var id_low_salary = 0;
+for(var i = 0; i < tab_employees.length; i++){
+    if(tab_employees[i].salary < save_low_salary){
+        save_low_salary = tab_employees[i].salary;
+        id_low_salary = i;
+    }
+    
+}
+
+console.log("Le plus bas salaire est de " + tab_employees[id_low_salary].firstname + " " + tab_employees[id_low_salary].lastname + " avec " + save_low_salary + " pots de bananes...");
 
 
-
+console.log("La différence de salaire est de  " + (save_high_salary-save_low_salary) );
