@@ -75,6 +75,13 @@ class Employee
 
         this.hiredate = this.createObjDate(hiredate), // création d'un attribut "hiredate"
 
+        this.getDaySeniority = function(hiredate) {
+            //console.log(hiredate);
+            let between_date_days = Date.now() - new Date(hiredate).getTime();
+            between_date_days = between_date_days / (1000 * 3600 * 24) 
+            return between_date_days;
+        }
+
         this.getSeniority = function(hiredate) {
             var between_date_in_year = 0;
             var between_date_in_month = 0;
@@ -85,7 +92,7 @@ class Employee
             var save_date_in_year = 0;
             var save_date_in_month = 0;
             var save_date_in_days = 0;
-            let between_date = Date.now() - hiredate.getTime(); // 
+            let between_date = Date.now() - new Date(hiredate).getTime(); // 
             let str_between_date = "";
             result_date_in_days = between_date / (1000 * 3600 * 24) ;
 
@@ -217,18 +224,18 @@ for(var i = 0; i < tab_employees.length; i++){
 var save_high_old = 0;
 var id_high_old = 0;
 for(var i = 0; i < tab_employees.length; i++){
-    //console.log(tab_employees[i].seniority);
+    //console.log(tab_employees[i].hiredate);
 
-    tab_old_employee = tab_employees[i].seniority.split('-');
+    old_employee = tab_employees[i].getDaySeniority(tab_employees[i].hiredate);
 
-    if(tab_old_employee[0] > save_high_old){
-        save_high_old = tab_old_employee[0];
+    if(old_employee > save_high_old){
+        save_high_old = old_employee;
         id_high_old = i;
     }
     
 }
 
-console.log("Le plus ancien salarié est " + tab_employees[id_high_old].firstname + " " + tab_employees[id_high_old].lastname + " avec " + save_high_old + " ans de joyeux services ");
+console.log("Le plus ancien salarié est " + tab_employees[id_high_old].firstname + " " + tab_employees[id_high_old].lastname + " avec " + save_high_old + " jours de joyeux services ");
 
 // Calcul du haut salaire
 var save_high_salary = 0;
