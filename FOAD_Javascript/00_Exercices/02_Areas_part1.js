@@ -54,6 +54,12 @@ class Point
         _obj_point.x = save_obj_point_x;
         _obj_point.y = save_obj_point_y;
 
+        /*
+        let save_obj = new Point(this.x, this.y);
+        this.value = _obj_point.value;
+        _obj_point.value = save_obj.value;
+        */
+
         //return this;
     }
 
