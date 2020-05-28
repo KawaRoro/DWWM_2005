@@ -43,26 +43,26 @@ class Point
         return duplicate;
     }
 
-    copy(_obj_point) {
-        this.x =  _obj_point.x; // target <- source
-        this.y =  _obj_point.y; // target <- source
+    copy(_point) {
+        this.x =  _point.x; // target <- source
+        this.y =  _point.y; // target <- source
         return this;
     }
 
-    rabbit(_obj_point) {
+    rabbit(_point) {
        /*
-        let save_obj_point_x = this.x;
-        let save_obj_point_y = this.y;
+        let save_point_x = this.x;
+        let save_point_y = this.y;
 
-        this.x = _obj_point.x;
-        this.y = _obj_point.y;
+        this.x = _point.x;
+        this.y = _point.y;
 
-        _obj_point.x = save_obj_point_x;
-        _obj_point.y = save_obj_point_y;
+        _point.x = save_point_x;
+        _point.y = save_point_y;
         */
         
         let save_obj = new Point(this.x, this.y);
-        this = _obj_point;
+        this = _point;
         return save_obj;
     }
 
