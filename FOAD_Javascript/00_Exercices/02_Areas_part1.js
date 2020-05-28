@@ -29,8 +29,8 @@
       * @param int _y Coordonnée verticale du point (ordonnée). Valeur négative acceptée
       */
      constructor(_x, _y) {
-         this.x = parseFloat(_x); // 
-         this.y = parseFloat(_y); // parseFloat(_y)
+         this.x = parseFloat(_x) || 0; // 
+         this.y = parseFloat(_y) || 0; // parseFloat(_y)
      }
  
      move(_x, _y) {
