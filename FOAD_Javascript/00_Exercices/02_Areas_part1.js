@@ -29,8 +29,13 @@ class Point
      * @param int _y Coordonnée verticale du point (ordonnée). Valeur négative acceptée
      */
     constructor(_x, _y) {
-        this.x = _x; // 
-        this.y = _y; //
+        this.x = parseFloat(_x); // 
+        this.y = parseFloat(_y); //
+    }
+
+    move(_x, _y) {
+        this.x = _x;
+        this.y = _y;
     }
 
     duplicate() {
@@ -45,6 +50,7 @@ class Point
     }
 
     rabbit(_obj_point) {
+       /*
         let save_obj_point_x = this.x;
         let save_obj_point_y = this.y;
 
@@ -53,14 +59,11 @@ class Point
 
         _obj_point.x = save_obj_point_x;
         _obj_point.y = save_obj_point_y;
-
-        /*
-        let save_obj = new Point(this.x, this.y);
-        this.value = _obj_point.value;
-        _obj_point.value = save_obj.value;
         */
-
-        //return this;
+        
+        let save_obj = new Point(this.x, this.y);
+        this = _obj_point;
+        return save_obj;
     }
 
     /**
