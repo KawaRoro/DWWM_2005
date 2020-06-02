@@ -140,48 +140,48 @@ class Employee
         this.seniority = this.getSeniority(hiredate);
     }
 
-    get getId() {
+    getId() {
         return this.id;
     }
-    get geLastname() {
+    getLastname() {
         return this.lastname;
     }
-    get getFirstname() {
+    getFirstname() {
         return this.firstname;
     }
-    get getEmail() {
+    getEmail() {
         return this.email;
     }
-    get getRole() {
+    getRole() {
         return this.role;
     }
-    get getSalary() {
+    getSalary() {
         return this.salary;
     }
-    get getHiredate() {
+    getHiredate() {
         return this.hiredate;
     }
 
-    set setId(id) {
-        this.id = id;
+    setId(_id) {
+        this.id = _id;
     }
-    set setLastname(lastname) {
-        this.lastname = lastname;
+    setLastname(_lastname) {
+        this.lastname = _lastname;
     }
-    set setFirstname(firstname) {
-        this.firstname = firstname;
+    setFirstname(_firstname) {
+        this.firstname = _firstname;
     }
-    set setEmail(email) {
-        this.email = email;
+    setEmail(_email) {
+        this.email = _email;
     }
-    set setRole(role) {
-        this.role = role;
+    setRole(_role) {
+        this.role = _role;
     }
-    set setSalary(salary) {
-        this.salary = salary;
+    setSalary(_salary) {
+        this.salary = _salary;
     }
-    set setHiredate(hiredate) {
-        this.hiredate = hiredate;
+    setHiredate(_hiredate) {
+        this.hiredate = _hiredate;
     }
 }
 

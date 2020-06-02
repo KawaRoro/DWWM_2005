@@ -36,6 +36,25 @@ class PlayerManager {
     }
 
     /**
+     * 
+     * @param _param // exemple _id = 1
+     * @param _canon // exemple _canon = id // username // password // email //
+     */
+    getFindSearch(_param , _canon) {
+        let result, sch;
+        sch = function (pl) {
+            //console.log( pl[String(_canon)] );
+            return pl[String(_canon)] === _param;
+        }
+        result = this.players.find(sch);
+        //console.log( result );
+        if (!result) {
+            result = false;
+        }
+        return result;
+    }
+
+    /**
      * Affichage des informations des joueurs
      * @param  _part 
      */
@@ -61,7 +80,7 @@ class PlayerManager {
      * 
      * @param _player Objet
      */
-    creat(_player) {
+    create(_player) {
         _player.setId(this.cptId);
         this.players.push(_player);
         this.cptId++;
@@ -156,8 +175,8 @@ class PlayerManager {
      * @param _canon // exemple _canon = id // username // password // email //
      * @param _newParam // exemple _id = 1
      */
-    update(_player, _param, _canon, _newParam) {
-        // _param = _player._param
+    update(_player, _canon, _newParam) { // _param,
+        let param = _player._param;
         let sch = function (pl) {
             //return pl.email == _player.email;
             //console.log(_param);
@@ -170,26 +189,6 @@ class PlayerManager {
         target[0][String(_canon)] = _newParam;
 
         return target[0].getId();
-    }
-    
-
-    /**
-     * 
-     * @param _param // exemple _id = 1
-     * @param _canon // exemple _canon = id // username // password // email //
-     */
-    getFindSearch(_param , _canon) {
-        let result, sch;
-        sch = function (pl) {
-            //console.log( pl[String(_canon)] );
-            return pl[String(_canon)] === _param;
-        }
-        result = this.players.find(sch);
-        //console.log( result );
-        if (!result) {
-            result = false;
-        }
-        return result;
     }
 
     /**
@@ -257,11 +256,11 @@ player4.addIsLogged(true);
 //////////////////////////////////
 
 const playerManager = new PlayerManager();
-playerManager.creat(player0); // IA
-playerManager.creat(player1);
-playerManager.creat(player2);
-playerManager.creat(player3);
-playerManager.creat(player4);
+playerManager.create(player0); // IA
+playerManager.create(player1);
+playerManager.create(player2);
+playerManager.create(player3);
+playerManager.create(player4);
 //playerManager.readAll();
 
 //search player
@@ -272,8 +271,9 @@ playerManager.creat(player4);
 //console.log(playerManager.read(0, 'totalScore'));
 //console.log(playerManager.check(0, 'totalScore'));
 
-//playerManager.update(player0, player0.getPassword(), 'password' , "azerty" );
-//playerManager.update(player0, player0.getTotalGames(), 'totalGames' , "8" );
+playerManager.update(player0, player0.getPassword(), 'password' , "azerty" );
+playerManager.update(player0, player0.getTotalGames(), 'totalGames' , "8" );
+
 playerManager.players[0].totalGames = 8;
 playerManager.players[1].totalGames = 9;
 playerManager.players[2].totalGames = 10;

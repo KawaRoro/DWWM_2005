@@ -8,16 +8,16 @@ class Employee
     /**
      * Constructeur
      */
-    constructor(_id, _lastname, _firstname, _role, _salary, _hiredate) {
+    constructor(_id, _lastName, _firstName, _role, _salary, _hireDate) {
 
         this.id = parseInt(_id); // NaN
-        this.lastname = _lastname || "Ano";
-        this.firstname = _firstname || "Nymous";
+        this.lastName = _lastName || "Anonymous";
+        this.firstName = _firstName || "Anonymous";
         this.role = _role || "Boulanger";
         this.salary = parseInt(_salary);
-        this.hiredate = _hiredate;
+        this.hireDate = _hireDate;
 
-        this.email = (this.firstname[0] + this.lastname).toLowerCase() + "@email.fr";
+        this.email = (this.firstName[0] + this.lastName).toLowerCase() + "@email.fr";
     }
 
     /**
@@ -28,15 +28,22 @@ class Employee
         return Math.round(this.salary/12*0.75);
     }
 
+    getDaySeniority(hireDate) {
+        //console.log(hireDate);
+        let between_date_days = Date.now() - new Date(hireDate).getTime();
+        between_date_days = between_date_days / (1000 * 3600 * 24) 
+        return between_date_days;
+    }
+
     /**
      * 
      */
     getSeniority_Masoud() {
 
         let now = new Date();
-        //let embaucheDate = this.hiredate;
+        //let embaucheDate = this.hireDate;
         
-        let diff = now.getTime() - this.hiredate.getTime();
+        let diff = now.getTime() - this.hireDate.getTime();
         diff = Math.floor(diff/(1000*60*60*24));
         let ans = Math.floor(diff / 365.25);
 
@@ -60,7 +67,7 @@ class Employee
 
     getSeniority_Aurelien() {
         let now = new Date();
-        let diff = now.getTime() - this.hiredate.getTime();
+        let diff = now.getTime() - this.hireDate.getTime();
         let year = (1000*3600*24*365.25);
         let month = year/12;
         let day = year/365.25;
@@ -85,9 +92,9 @@ class Employee
 
     getSeniority() {
         let now = new Date(); 
-        let y = now.getFullYear() - this.hiredate.getFullYear(); // années
-        let m = now.getMonth() - this.hiredate.getMonth(); // mois
-        let d = now.getDate() - this.hiredate.getDate(); // jours
+        let y = now.getFullYear() - this.hireDate.getFullYear(); // années
+        let m = now.getMonth() - this.hireDate.getMonth(); // mois
+        let d = now.getDate() - this.hireDate.getDate(); // jours
         let result = "";
 
         if(m < 0) {
@@ -114,6 +121,66 @@ class Employee
 
         return result;
 
+    }
+
+    isValidId(_id){
+        if (Number.isNaN(_id)){
+            return (false);
+        }else{
+            return (true);
+        }
+    }
+
+    getId() {
+        if(this.isValidId(this.id)) {
+            return this.id;
+        }else{
+            return 0;
+        }
+    }
+    getLastName() {
+        return this.lastName;
+    }
+    getFirstName() {
+        return this.firstName;
+    }
+    getEmail() {
+        return this.email;
+    }
+    getRole() {
+        return this.role;
+    }
+    getSalary() {
+        return this.salary;
+    }
+    getHiredate() {
+        return this.hireDate;
+    }
+
+    setId(_id) {
+        if(this.isValidId(_id)) {
+            this.id = _id;
+        }else{
+            this.id = 0;
+        }
+    }
+    setLastname(_lastName) {
+        this.lastName = _lastName;
+    }
+    setFirstname(_firstname) {
+        this.firstname = _firstname;
+    }
+    setEmail(_email) {
+        this.email = _email;
+    }
+    setRole(_role) {
+        this.role = _role;
+    }
+    setSalary(_salary) {
+        this.salary = _salary;
+    }
+    setHiredate(_hireDate) {
+        this.hireDate = _hireDate;
     }
 }
 
@@ -155,7 +222,7 @@ employees.push(
 
 for(let i = 0; i < employees.length; i++) {
 
-    console.log(employees[i].firstname + " " + employees[i].hiredate.toString());
+    console.log(employees[i].firstname + " " + employees[i].hireDate.toString());
     /*console.log(employees[i].getMonthlySalary());
     console.log(employees[i].getSeniority_Masoud());
     console.log(employees[i].getSeniority_Aurelien());
@@ -164,7 +231,7 @@ for(let i = 0; i < employees.length; i++) {
 }
 
 var sortDate = function(a, b) {
-    return a.hiredate - b.hiredate;
+    return a.hireDate - b.hireDate;
 }
 
 var sortSalary = function(a, b) {
