@@ -12,9 +12,9 @@ class Enterprise
 
     /**
      * 
-     * @param  _filter
+     * @param  _filter // ou param
      * @param  _order // asc -> croissant // desc -> decroissant
-     * @param  _param // Optionnel
+     * @param  _param // Avec "param" à _filter permet de lire n'importe quel paramétre... | Optionnel
      */
     readAll(_filter, _order = "asc", _param = "") { //_filter -> id, lastName, firstName, role, salary, hireDate
         if(_param != ""){ _filter = 'param'; }
@@ -196,7 +196,7 @@ class Enterprise
             //console.log( pl[String(_canon)] );
             return pl[String(_canon)] === _param;
         }
-        result = this.players.find(sch);
+        result = this.employees.find(sch);
         //console.log( result );
         if (!result) {
             result = false;
