@@ -153,7 +153,7 @@ class Employee
     getSalary() {
         return this.salary;
     }
-    getHiredate() {
+    getHireDate() {
         return this.hireDate;
     }
 
@@ -164,11 +164,11 @@ class Employee
             this.id = 0;
         }
     }
-    setLastname(_lastName) {
+    setLastName(_lastName) {
         this.lastName = _lastName;
     }
-    setFirstname(_firstname) {
-        this.firstname = _firstname;
+    setFirstName(_firstName) {
+        this.firstName = _firstName;
     }
     setEmail(_email) {
         this.email = _email;
@@ -179,7 +179,7 @@ class Employee
     setSalary(_salary) {
         this.salary = _salary;
     }
-    setHiredate(_hireDate) {
+    setHireDate(_hireDate) {
         this.hireDate = _hireDate;
     }
 }
