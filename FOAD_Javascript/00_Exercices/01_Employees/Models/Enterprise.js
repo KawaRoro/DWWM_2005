@@ -67,8 +67,8 @@ class Enterprise
             // moteur de recherche : MDN JS object assign
             // moteur de recherche newbie: JS cloner objet
             // target / source
-            let copie = Object.assign(new Employee(), emp);
-            return copie;
+            let copy = Object.assign(new Employee(), emp);
+            return copy;
         }
 
         return undefined;
