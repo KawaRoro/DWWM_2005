@@ -1,0 +1,6 @@
+/.metadata/
+
+.vpprefdata/
+*.log
+*.lock 
+*.bak*
