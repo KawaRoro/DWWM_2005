@@ -70,7 +70,7 @@ class Enterprise
             let copy = Object.assign(new Employee(), emp);
             return copy;
         }
-
+        
         return undefined;
 
         /*let i;
