@@ -70,7 +70,44 @@ class Enterprise
             let copy = Object.assign(new Employee(), emp);
             return copy;
         }
-        
+
+        return undefined;
+
+        /*let i;
+        for(i = 0; i < this.employees.length; i++) {
+            let emp = this.employees[i];
+            if(emp.id === parseInt(_id)) {
+                return emp;
+            }
+        }*/
+
+        /*for(emp of this.employees) {
+            if(emp.id === parseInt(_id)) {
+                return emp;
+            }
+        }*/
+
+    }
+
+    /**
+     * Recherche un employé par son identifiant
+     * @param int _id 
+     * @returns Employee l'employé correspondant ou undefined si non trouvé
+     */
+    readAll(_id) { 
+
+        let emp = this.employees.find(emp => emp.id === parseInt(_id));
+
+        if(emp !== undefined) {
+            // retourner une copie de l'employé
+            // cloner l'objet : let copie = Object.assign()
+            // moteur de recherche : MDN JS object assign
+            // moteur de recherche newbie: JS cloner objet
+            // target / source
+            let copy = Object.assign(new Employee(), emp);
+            return copy;
+        }
+
         return undefined;
 
         /*let i;
@@ -91,7 +128,7 @@ class Enterprise
 
     /**
      * Valide les données et met à jour un employé de la collection
-     * @param Employee _employee 
+     * @param Employee _employee Une copie d'un employé existant
      */
     update(_employee) {
 
@@ -105,11 +142,11 @@ class Enterprise
 
         let exists = this.read(_employee.id);
         if (exists !== undefined && exists === _employee) {
-        return _employee;
+            return _employee;
         }
 
         let emp = this.employees.find((emp) => emp.id === parseInt(_employee.id));
-        Object.assign(emp, _employee);
+        //Object.assign(emp, _employee);
         return emp;
     }
     
