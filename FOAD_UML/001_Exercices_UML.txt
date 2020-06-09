@@ -1,0 +1,39 @@
+
+La classification par "objets" permet de diminuer le fossé sémantique entre le monde réel et sa représentation informatique.
+Donc à priori tout est représentable en objet avec des notions plus ou moins complexe dans d'héritage de propriétés voir même de comportements.
+
+> Le poste de télévision du salon 
+C'est une class Télévision pouvant être présente plusieurs fois par logement par exemple avec des attributs différents en fonction du lieu.
+L'attribut lieu correspond ainsi au salon ou autre.
+
+> La qualité du compilateur 
+La class compilateur peut contenir un attribut de qualité. Sa représentativité informatique est tout à fait légitime.
+
+> La deuxième guerre mondiale 
+Peut répondre à une class "Guerre" au sous ensemble de type "mondiale" ou "locale"
+
+> James Rumbaugh 
+class "Personne" avec comme attribut prénom et nom "James Rumbaugh" 
+
+> La racine carrée de 4 
+Peut être en toute logique une methode d'une class et pas forcement une class à proprement parler.
+
+> Une transaction boursière 
+Ce n'est pas encore une fois un objet mais peut être l'interraction entre deux objet de type "banque" par exemple.
+
+> La vitesse de la lumière 
+C'est une valeur qui peut dépendre d'une class vitesse et d'une propriété type de vitesse. Ou encore être une classe objet auquel on attribue différents type de vitesse.
+
+La reprensation sous forme d'objet peut être diverse.
+
+Etats d'une bouteille :
+
+- Ouverte et remplie
+- Ouverte et vide
+- Fermée et remplie
+- Fermée et vide
+- Ouverte
+- Fermée
+- Remplie
+- Pleine
+- 
