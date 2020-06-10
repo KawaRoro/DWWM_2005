@@ -65,10 +65,37 @@ class Area
     constructor(_width, _height) {
         this.width = parseInt(_width);
         this.height = parseInt(_height);
-        this.size = this.height * this.width;
+        //this.size = this.height * this.width;
         this.point = [];
         //this.point.push(new Point(0, 0));
         this.origin = new Point(0, 0);
+    }
+
+    /**
+     * Vérifi si le point est déjà occupé
+     * @returns Boolean true en cas de succès, false en cas d'échec
+     */
+    checkUsedPoint(_targetPoint) {
+        let checkUsedPoint = this.point.find((p) => p.x === _targetPoint.x && p.y === _targetPoint.y);
+        if(checkUsedPoint == undefined){
+            return true;
+        }else{
+            //console.log("checkUsedPoints ->"+checkUsedPoint);
+            return false;
+        }
+    }
+
+    /**
+     * Vérifi si le point est dans la zone
+     * @returns Boolean true en cas de succès, false en cas d'échec
+     */
+    checkZonePoint(_point) {
+        
+        if ( ((_point.x >= 0) && (_point.x <= this.width)) || ((_point.y >= 0) && (_point.y <= this.height)) ) {
+            return true;
+        }else{
+            return false;
+        }
     }
 
     /**
@@ -77,13 +104,42 @@ class Area
      */
     isValid(_point) {
 
-        //console.log(typeof _employee);
+        //console.log(typeof _point);
         if(!(_point instanceof Point)) {            
             return false;
         }
 
         return true;
     }
+
+    /**
+     * Vérifi la position d'un point par rapport aux coordonnées 0 . 0
+     * @param Point _point 
+     * @returns Boolean true en cas de succès, false si l'ajout est impossible 
+     */
+    checkClosePoint(_point) {
+        let newTargetPoint;
+            
+        if( (Math.sign(_point.x)==1) && (Math.sign(_point.y)==1) ){
+            newTargetPoint = new Point(_point.x-1, _point.y-1);
+        }else if( (Math.sign(_point.x)==0) && (Math.sign(_point.y)==0) ){
+            newTargetPoint = new Point(0, 0);
+        }else if( (Math.sign(_point.x)==-1) && (Math.sign(_point.y)==-1) ){
+            newTargetPoint = new Point(_point.x+1, _point.y+1);
+        }else if( (Math.sign(_point.x)==1) && (Math.sign(_point.y)==-1) ){
+            newTargetPoint = new Point(_point.x-1, _point.y+1);
+        }else if( (Math.sign(_point.x)==-1) && (Math.sign(_point.y)==+1) ){
+            newTargetPoint = new Point(_point.x+1, _point.y-1);
+        }else if( (Math.sign(_point.x)==0) && (Math.sign(_point.y)==-1) ){
+            newTargetPoint = new Point(0, _point.y+1);
+        }else if( (Math.sign(_point.x)==-1) && (Math.sign(_point.y)==0) ){
+            newTargetPoint = new Point(_point.x+1, 0);
+        }else{
+            newTargetPoint = new Point(0, 0);
+        }
+        return newTargetPoint;
+    }
+
 
     /**
      * Ajoute un "Point" dans la zone
@@ -96,20 +152,55 @@ class Area
         if(!this.isValid(_point)) {
             return false;
         }
-        this.point.push(_point);
-        return true;
-    }
 
+        if(this.checkUsedPoint(_point)){
+            this.point.push(_point);
+            return true;
+        } else {
+            // Search point.x point.y le plus proche de x = 0 et y = 0 
+            let addTargetPoint = this.checkClosePoint(_point);
+            if(this.checkUsedPoint(addTargetPoint)) {
+                _point.move(addTargetPoint.x, addTargetPoint.y);
+                this.point.push(_point);
+                return true;
+            }else{
+               this.addPoint(addTargetPoint);
+               return false;
+            }
+
+        }
+    }
 
     /**
      * Déplace un point existant dans la zone vers de nouvelles coordonnées
      * Les nouvelles coordonnées peuvent se trouver hors limites
      * @returns Boolean true en cas de succès, false en cas d'échec
      */
-    movePoint(/* déterminer les paramètres */) {
-        // implémenter la méthode
+    movePoint(_originPoint , _targetPoint) {
+        
+        if(!this.isValid(_originPoint) || !this.isValid(_targetPoint)){
+            return false;
+        }
+
+        if(this.checkUsedPoint(_targetPoint)){
+            _originPoint.move(_targetPoint.x, _targetPoint.y);
+            return true;
+        }
+
+        return false;
     }
 
+    /**
+     * Tri du tableau de point par ordre croissant
+     * @returns array // Retourne un tableau de point par ordre croissant
+     */
+    sortingPoint() {
+        let sortingPoint = this.point.sort(function(a,b) {
+            if( a.x === b.x ) return a.y-b.y;
+            return a.x-b.x;
+        });
+        return sortingPoint;
+    }
 
     /**
      * Vérifie la position de chaque "Point" existant dans la zone
@@ -117,7 +208,40 @@ class Area
      * @returns int le nombre de points déplacés
      */
     needAllInside(/* déterminer les paramètres */) {
-        // implémenter la méthode
+        //console.log(this.sortingPoint());
+        let listSortingPoint = this.sortingPoint();
+
+        for (let i = 0; i < listSortingPoint.length; i++) {
+            if (listSortingPoint[i] != undefined) {
+                
+                if (!this.checkZonePoint(listSortingPoint[i]) ) {
+                    // Déplacement du point
+                    console.log(this.checkZonePoint(listSortingPoint[i]));
+                }
+            }
+        }
+
+    }
+
+    /**
+     * Vérification de la position de chaque "Point" existant dans la zone
+     * Chaque Point hors des limites est automatiquement affiché
+     * @returns int le nombre de points affichés
+     */
+    checkAllInside(/* déterminer les paramètres */) {
+        
+        let listSortingPoint = this.sortingPoint();
+
+        for (let i = 0; i < listSortingPoint.length; i++) {
+            if (listSortingPoint[i] != undefined) {
+                
+                if (!this.checkZonePoint(listSortingPoint[i]) ) {
+                    // Déplacement du point
+                    console.log(listSortingPoint[i]);
+                }
+            }
+        }
+
     }
 }
 

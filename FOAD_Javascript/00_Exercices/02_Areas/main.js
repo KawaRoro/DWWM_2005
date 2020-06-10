@@ -1,15 +1,16 @@
 const Point = require('./models/Point.js');
 const Area = require('./models/Area.js');
 
+// a)
+let area1 = new Area(4, 4); // a.1)
+let area2 = new Area(8, 6); // a.2)
 
-let area1 = new Area(4, 4);
-
+// b)
 let p1a1 = new Point(1, 1);
 let p2a1 = new Point(2, 2);
 let p3a1 = new Point(3, 3);
 let p4a1 = new Point(4, 4);
 let p5a1 = new Point(5, 5);
-
 let p6a1 = new Point(6, 6);
 let p7a1 = new Point(7, 7);
 let p8a1 = new Point(8, 8);
@@ -24,10 +25,9 @@ area1.addPoint(p6a1);
 area1.addPoint(p7a1);
 area1.addPoint(p8a1);
 
-console.log(area1.point);
+//console.log(area1.point);
 
-let area2 = new Area(8, 6);
-
+// c)
 let p1a2 = new Point(11, 1);
 let p2a2 = new Point(12, 2);
 let p3a2 = new Point(13, 3);
@@ -42,4 +42,36 @@ area2.addPoint(p4a2);
 area2.addPoint(p5a2);
 area2.addPoint(p6a2);
 
-console.log(area2.point);
+//console.log(area2.point);
+
+// d) Créer ensuite 2 "Point" distincts ayant les mêmes coordonnées
+let ref1a1 = new Point(1, 1);
+let ref2a2 = new Point(1, 1);
+
+// e) Les ajouter dans chacune des zones (1 "Point" par zone)
+area1.addPoint(ref1a1);
+area2.addPoint(ref2a2);
+
+/*
+console.log(area1.movePoint(p1a1 , new Point(8, 1)));
+console.log(area1.movePoint(p2a1 , new Point(7, 2)));
+console.log(area1.movePoint(p3a1 , new Point(6, 3)));
+console.log(area1.movePoint(p4a1 , new Point(5, 4)));
+console.log(area1.movePoint(p5a1 , new Point(4, 5)));
+console.log(area1.movePoint(p6a1 , new Point(3, 6)));
+console.log(area1.movePoint(p7a1 , new Point(2, 7)));
+console.log(area1.movePoint(p8a1 , new Point(1, 8)));
+*/
+
+//console.log(area1.point);
+//console.log(area2.point);
+
+area1.checkAllInside();
+
+//area1.needAllInside();
+
+// f) Pour chaque zone : 
+// * - Afficher tous les points qui se trouvent hors des limites de la zone
+// * - Exécuter la méthode "needAllInside"
+// * - Afficher tous les points
+// * - Afficher le nombre d'emplacements libres
