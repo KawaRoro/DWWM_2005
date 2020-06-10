@@ -12,7 +12,7 @@ let p5a1 = new Point(5, 5);
 
 let p6a1 = new Point(6, 6);
 let p7a1 = new Point(7, 7);
-//let p8a1 = new Point(0, 0);
+let p8a1 = new Point(8, 8);
 
 //area1.addPoint(p0);
 area1.addPoint(p1a1);
@@ -22,7 +22,7 @@ area1.addPoint(p4a1);
 area1.addPoint(p5a1);
 area1.addPoint(p6a1);
 area1.addPoint(p7a1);
-//area1.addPoint(p8a1);
+area1.addPoint(p8a1);
 
 console.log(area1.point);
 

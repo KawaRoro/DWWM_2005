@@ -8,7 +8,7 @@ const Point = require('./Point.js');
  * 
  * CONSIGNES : 
  * 1) Lisez la description de la classe "Area"
- * 2) Implémentez le code nécessaire à son bon fonctionnement en suivant les indications dans sa descirption
+ * 2) Implémentez le code nécessaire à son bon fonctionnement en suivant les indications dans sa description
  * 3) Implémentez ensuite le programme suivant :
  *      a) Créer 2 "Area"
  *          a.1) Area 1 : 4 lignes x 4 colonnes
@@ -67,7 +67,8 @@ class Area
         this.height = parseInt(_height);
         this.size = this.height * this.width;
         this.point = [];
-        this.point.push(new Point(0, 0));
+        //this.point.push(new Point(0, 0));
+        this.origin = new Point(0, 0);
     }
 
     /**
