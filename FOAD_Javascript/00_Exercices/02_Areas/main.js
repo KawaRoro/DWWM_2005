@@ -45,13 +45,14 @@ area2.addPoint(p6a2);
 //console.log(area2.point);
 
 // d) Créer ensuite 2 "Point" distincts ayant les mêmes coordonnées
-let ref1a1 = new Point(1, 1);
-let ref2a2 = new Point(1, 1);
+//let ref1a1 = new Point(10, 10);
+//let ref2a2 = new Point(10, 10);
 
 // e) Les ajouter dans chacune des zones (1 "Point" par zone)
-area1.addPoint(ref1a1);
-area2.addPoint(ref2a2);
+//area1.addPoint(ref1a1);
+//area2.addPoint(ref2a2);
 
+// Lot de mouvement de points 
 /*
 console.log(area1.movePoint(p1a1 , new Point(8, 1)));
 console.log(area1.movePoint(p2a1 , new Point(7, 2)));
@@ -66,12 +67,20 @@ console.log(area1.movePoint(p8a1 , new Point(1, 8)));
 //console.log(area1.point);
 //console.log(area2.point);
 
-area1.checkAllInside();
-
-//area1.needAllInside();
-
 // f) Pour chaque zone : 
 // * - Afficher tous les points qui se trouvent hors des limites de la zone
+// Affichage de tous les points en dehors de la zone
+area1.checkAllOutside();
+area2.checkAllOutside();
+
 // * - Exécuter la méthode "needAllInside"
+area1.needAllInside();
+area2.needAllInside();
+
 // * - Afficher tous les points
+console.log(area1.point);
+console.log(area2.point);
+
 // * - Afficher le nombre d'emplacements libres
+area1.freeSpaceAllInside();
+area2.freeSpaceAllInside();
