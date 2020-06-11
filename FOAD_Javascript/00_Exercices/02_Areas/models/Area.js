@@ -65,6 +65,7 @@ class Area
     constructor(_width, _height) {
         this.width = parseInt(_width);
         this.height = parseInt(_height);
+        this.size = this.width * this.height;
         this.origin = new Point(0, 0);
         this.point = [];
     }
@@ -94,6 +95,14 @@ class Area
         }else{
             return false;
         }
+    }
+
+    /**
+     * Vérifi si le point est dans la zone
+     * @returns Boolean true en cas de succès, false en cas d'échec
+     */
+    checkFreeSpace() {
+        return (this.point.length < this.size);
     }
 
     /**
@@ -179,6 +188,10 @@ class Area
     addPoint(_point) {
 
         if(!this.isValidPoint(_point)) {
+            return false;
+        }
+
+        if(!this.checkFreeSpace()){
             return false;
         }
 
