@@ -125,54 +125,70 @@ class Area
      * @returns newTargetPoint de type Point avec les nouvelles coordonnées trouvées déjà présentes ou pas
      */
     checkClosePoint(_point) {
-        let newTargetPoint;
+        let newTargetPoint = new Point(_point.x-1, _point.y);
         let ternaire = Math.floor(Math.random() * Math.floor(3));
         //console.log("_point entrée ->"+_point);
         if( (Math.sign(_point.x)==1) && (Math.sign(_point.y)==1) ){
             if(_point.x != _point.y){
                 if(_point.x > _point.y){
-                    newTargetPoint = new Point(_point.x-1, _point.y);
+                    newTargetPoint.x = _point.x-1;
+                    newTargetPoint.y = _point.y;
                 }else{
-                    newTargetPoint = new Point(_point.x, _point.y-1);
+                    newTargetPoint.x = _point.x;
+                    newTargetPoint.y = _point.y-1;
                 }
             }else{
                 if(ternaire == 0){
-                    newTargetPoint = new Point(_point.x-1, _point.y);
+                    newTargetPoint.x = _point.x-1;
+                    newTargetPoint.y = _point.y;
                 }else if(ternaire == 1){
-                    newTargetPoint = new Point(_point.x, _point.y-1);
+                    newTargetPoint.x = _point.x;
+                    newTargetPoint.y = _point.y-1;
                 }else{
-                    newTargetPoint = new Point(_point.x-1, _point.y-1);
+                    newTargetPoint.x = _point.x-1;
+                    newTargetPoint.y = _point.y-1;
                 }
             }
         }else if( (Math.sign(_point.x)==0) && (Math.sign(_point.y)==0) ){
-            newTargetPoint = new Point(0, 0);
+            newTargetPoint.x = 0;
+            newTargetPoint.y = 0;
         }else if( (Math.sign(_point.x)==-1) && (Math.sign(_point.y)==-1) ){
             if(_point.x != _point.y){
                 if(_point.x > _point.y){
-                    newTargetPoint = new Point(_point.x+1, _point.y);
+                    newTargetPoint.x = _point.x+1;
+                    newTargetPoint.y = _point.y;
                 }else{
-                    newTargetPoint = new Point(_point.x, _point.y+1);
+                    newTargetPoint.x = _point.x;
+                    newTargetPoint.y = _point.y+1;
                 }
             }else{
                 //newTargetPoint = new Point(_point.x+1, _point.y+1);
                 if(ternaire == 0){
-                    newTargetPoint = new Point(_point.x+1, _point+y);
+                    newTargetPoint.x = _point.x+1;
+                    newTargetPoint.y = _point.y;
                 }else if(ternaire == 1){
-                    newTargetPoint = new Point(_point.x, _point.y+1);
+                    newTargetPoint.x = _point.x;
+                    newTargetPoint.y = _point.y+1;
                 }else{
-                    newTargetPoint = new Point(_point.x+1, _point.y+1);
+                    newTargetPoint.x = _point.x+1;
+                    newTargetPoint.y = _point.y+1;
                 }
             }
         }else if( (Math.sign(_point.x)==1) && (Math.sign(_point.y)==-1) ){
-            newTargetPoint = new Point(_point.x-1, _point.y+1);
+            newTargetPoint.x = _point.x-1;
+            newTargetPoint.y = _point.y+1;
         }else if( (Math.sign(_point.x)==-1) && (Math.sign(_point.y)==+1) ){
-            newTargetPoint = new Point(_point.x+1, _point.y-1);
+            newTargetPoint.x = _point.x+1;
+            newTargetPoint.y = _point.y-1;
         }else if( (Math.sign(_point.x)==0) && (Math.sign(_point.y)==-1) ){
-            newTargetPoint = new Point(0, _point.y+1);
+            newTargetPoint.x = 0;
+            newTargetPoint.y = _point.y+1;
         }else if( (Math.sign(_point.x)==-1) && (Math.sign(_point.y)==0) ){
-            newTargetPoint = new Point(_point.x+1, 0);
+            newTargetPoint.x = _point.x+1;
+            newTargetPoint.y = 0;
         }else{
-            newTargetPoint = new Point(0, 0);
+            newTargetPoint.x = 0;
+            newTargetPoint.y = 0;
         }
         //console.log("_point sortie ->"+newTargetPoint);
         return newTargetPoint;
@@ -300,7 +316,7 @@ class Area
 
 
     /**
-     * Vérification de la position de chaque "Point" existant dans la zone
+     * Vérification de la position de chaque "Point" existant hors de la zone
      * Chaque Point hors des limites est automatiquement affiché
      * @returns int le nombre de points affichés
      */
@@ -322,7 +338,7 @@ class Area
 
     /**
      * Vérification de la position de chaque "Point" existant dans la zone
-     * Chaque Point hors des limites est automatiquement affiché
+     * Chaque Point dans les limites est automatiquement affiché
      * @returns int le nombre de points affichés
      */
     freeSpaceAllInside(/* déterminer les paramètres */) {
