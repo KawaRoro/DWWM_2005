@@ -1,0 +1,95 @@
+Parmi elles, les associations permettent de définir les liens structurels entre nos différentes classes.
+
+ 
+
+Ces liens sont TOUJOURS liés au contexte de l’application à développer.
+
+ 
+
+Imaginons un ensemble de classes (ex : Voiture, Conducteur, Passager) et 2 applications distinctes à développer 
+à partir de ces 3 classes.
+
+Gestion de location de Voiture à un Conducteur
+Calcul de consommation d’un Véhicule selon le poids total de Conducteur + Passagers
+ 
+
+Les associations dans les diagrammes de classes respectifs seront différentes !
+
+ 
+
+ 
+
+Les questions à se poser pour identifier la bonne relation :
+
+ 
+
+En 1er lieu, s’abstraire du monde physique et se poser chaque question en prenant en compte le contexte de l’application !
+
+ 
+
+Si A est un B, il y a une relation d’héritage.
+Ex1 : un arbre (A) est un végétal (B). Arbre hérite de Végétal (A hérite de B).
+Ex2 : un arbre n’est pas un animal. Arbre ne peut pas hériter de Animal.
+ 
+
+Si A utilise B dans au moins une de ses méthodes, il y a une relation de dépendance.
+Ex1 : Dans une classe « Maire », la méthode « Marier(p1 : Personne, p2 : Personne) : void » accepte des 
+instances de « Personne » en paramètre.
+« Maire » dépend de « Personne ».
+Ex2 : Dans une classe « Factory », la méthode « createEmployee() : Employee » retourne une instance de la 
+classe « Employee ».
+« Factory » dépend de « Employee ».
+ 
+
+Si un attribut de A stocke une ou plusieurs instances de B, il y a une relation d’ « association » .
+Ex1 : La classe « Voiture » possède un attribut de type « Conducteur ».
+« Voiture » est associée à « Conducteur ».
+Ex2 : La classe « Avion » possède un attribut de type collection de « Passager ».
+« Avion » est associé à « Passager ».
+ 
+
+ 
+
+Pour rappel, il existe 3 niveaux d’associations :
+
+ 
+
+Association : Lien structurel entre 2 classes (voir description ci-dessus).
+ 
+
+Agrégation : Association « forte ». Implique une relation d’appartenance entre les 2 classes.
+Une association devient une agrégation si « A » est structurellement un ensemble de « B ».
+
+Une association devient une agrégation si on peut répondre à des questions type « A fait partie de B » ; « B est 
+un ensemble de A ».
+
+Ex1: Un « Employee » fait partie d’une « Equipe » ou une « Equipe » est un ensemble d’ « Employee » = agrégation.
+Ex2 : Un « Conducteur » conduit une « Voiture » mais n’en fait pas partie (structurellement parlant) = association.
+Ex3 : Un « Moteur » fait partie d’une Voiture mais la Voiture ne peut pas fonctionner sans 
+au moins 1 « Moteur » = composition (voir ci-dessous).
+ 
+
+Composition : Agrégation forte. Implique une relation de contenance entre 2 classes et un couplage très fort entre celles-ci.
+La composition associe une classe composite (conteneur) et des classes parties (composants), tel que tout objet partie 
+appartient à un et un seul objet composite.
+
+C'est donc une association 1:N ou 1:1.
+
+Le cycle de vie des objets parties est lié à celui de l'objet composite, donc un objet partie disparaît quand l'objet 
+composite auquel il est associé disparaît.
+
+ 
+
+Une agrégation devient une composition si toutes les conditions suivantes sont réunies (A = composant, B = composite) :
+
+« A » est un composant de « B » (« B » ne peut pas fonctionner sans « A ») (« B » contient TOUJOURS au moins une instance 
+de « A »).
+À un instant T, une instance de « A » ne peut apparaitre que dans une seule instance de « B ».
+La destruction d’une instance de « B » implique la destruction des instances de « A » associées.
+ 
+
+ 
+
+Représentation UML des relations :
+
+Class diagram - Wikipedia

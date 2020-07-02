@@ -1,0 +1,54 @@
+Représentation
+Les éléments d'un diagramme des Classes sont les classes et les relations qui les lient.
+
+
+Classes
+
+
+les classes sont les modules de base de la
+programmation orientée objet. Une classe est
+représentée en utilisant un rectangle divisé en trois
+sections. La section supérieure est le nom de la
+classe. La section centrale définit les propriétés de la
+classe. La section du bas énumère les méthodes de la
+classe.
+
+
+
+Association
+
+une association est une relation générique entre deux
+classes. Elle est modélisée par une ligne reliant les
+deux classes. Cette ligne peut être qualifiée avec le
+type de relation, et peut également comporter des
+règles de multiplicité (par exemple un à un, un à
+plusieurs, plusieurs à plusieurs) pour la relation.
+
+
+
+
+Composition
+
+si une classe ne peut pas exister par elle-même, mais
+doit être un membre d'une autre classe, alors elle
+possède une relation de composition avec la classe
+contenante. Une relation de composition est indiquée
+par une ligne avec un "diamant" rempli.
+Dépendance quand une classe utilise une autre classe, par exemple
+comme membre ou comme paramètre d'une de ces
+fonctions, elle "dépend" ainsi de cette classe. Une
+M. Grimaldi – février 2007 – page 1/14
+relation de dépendance est représentée par une flèche pointillée.
+
+
+Agrégation
+les agrégations indiquent une relation de contenantcontenu. Elle décrite par une relation "possède". Une
+relation d'agrégation est représentée par une ligne
+avec un "diamant" creux.
+
+Généralisation
+une relation de généralisation est l'équivalent d'une
+relation d'héritage en terme orientés objet (relation
+"est-un "). Une relation de généralisation est indiquée
+par une flèche creuse se dirigeant vers la classe
+"parent ".

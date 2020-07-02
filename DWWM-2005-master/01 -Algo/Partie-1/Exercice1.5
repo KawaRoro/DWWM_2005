@@ -1,0 +1,30 @@
+Lire la somme initiale S placée sur un compte, l'intérêt i offert par la banque et le nombre N d'années de placement de la somme S.
+Calculez la valeur acquise par la somme S placée pendant N années :
+▪ avecunintérêtsimple:S(1+N*i) ▪ avecunintérêtcomposé:S(1+i)N
+
+
+
+
+
+Variable réel
+
+ S, ValSimple, ValComp
+
+
+entier  i, n
+
+
+   Début 
+
+   écrire  "Saisir  la somme initiale:"
+   lire  S
+   écrire  "Saisir l'intérêt :"
+   lire  i
+   écrire  "Saisir le nombre d'années de placement:"
+   lire  n
+   ValSimple <-- S * (1 + n * i / 100)
+   ValComp <-- S * (1 + i / 100)n
+   écrire  " intérêt simple:", ValSimple
+   écrire  " intérêt composé:", ValComp
+
+   Fin 

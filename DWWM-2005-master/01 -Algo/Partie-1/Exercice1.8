@@ -1,0 +1,24 @@
+aLire une année A.
+Déterminer si l'année A est bissextile. Si A n'est pas divisible par 4, l'année n'est pas bissextile.
+ Si A est divisible par 4, l'année est bissextile sauf si A est divisible par 100 et pas par 400. Ecrire un message « Bissextile » ou « Non bissextile » suivant le cas.
+
+Variable est un ENTIER
+
+A
+
+DEBUT
+
+Afficher(« saisir une année »)
+Saisir A
+Si (A/4 == 0) alors : 
+
+ Afficher (« Année non bissextile »)
+Sinon :
+ Si (100/A > 0) alors :
+ Afficher (« Année bissextile »)
+ Sinon :
+ Si (A/400 > 0) alors :
+ Afficher (« Année bissextile »)
+
+FIN Si
+FIN

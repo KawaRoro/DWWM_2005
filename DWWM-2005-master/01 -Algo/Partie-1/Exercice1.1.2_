@@ -1,0 +1,39 @@
+Variable Entier
+
+
+Variable Entier
+n1, n2 , R
+réponse est un booleen
+o est une string
+n est une string 
+
+
+Debut
+
+Ecrire "Entrez deux nombre entier séparé par un espace"
+Lire n1
+Lire n2 
+PROCEDURE : R = (n1+n2) /2
+Ecrire "  La moyenne des deux nombres est " R "
+Ecrire "Souhaitez-vous faire un autre calcul ?" "(O/N)"
+Lire reponse utilisateur
+Si l'utilisateur saisi "o"
+Alors 
+Ecrire "Entrez deux nombre entier séparé par un espace"
+Lire n1
+Lire n2 
+PROCEDURE : R = (n1+n2) /2
+Lire "  La moyenne des deux nombres est " n1 + n2 = r / 2  
+
+Ecrire "Souhaitez-vous faire un autre calcul ?" "(O/N)"
+Si L'utilisateur saisi  "n"
+Alors 
+Ecrire "appuyer sur une touche pour quitter ”
+
+
+
+fin si
+  
+Fin
+
+

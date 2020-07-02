@@ -1,0 +1,72 @@
+Légende : 
+
+
+* Objets 
+/ Non Objets
+
+
+
+
+Parmi les éléments suivants, lesquels sont des objets, et pourquoi ?
+
+
+
+
+ Le poste de télévision du salon
+
+* il peut exécuter une activité (Il y a un Etat de l'objet )
+On va y trouver des attributs tel que la taille, le poids, l'année... mais également des opérations comme s'allumer, enregister ... 
+
+
+
+
+ La qualité du compilateur
+
+/ Je ne pense pas que cela puisse être consideré comme un objet 
+Pour par part ici on parle d'une qualité qui ne peut être ramener qu'a son état, beau ou mauvais en l'occurence.
+
+
+ La deuxième guerre mondiale
+
+/ J'ai un doute 
+
+
+ James Rumbaugh
+
+* Tout comme une class personne, James Rumbaugh  va posseder des attributs , des opérations également
+
+ La racine carrée de 4
+
+* La racine carée de 4 peut je pense être définit comme un objet, l'opération de calcul doit être je pense définis , ainsi que ses attributs
+type de 
+
+ Une transaction boursière
+
+* Je pense que la transaction boursière peut être objet, on va y retrouver des attributs , opérations,  comme beaucoup d'objet en 
+relation avec le systeme bancaire. 
+
+ La vitesse de la lumière
+
+/ Je ne penses pas que la vitesse peut etre définit comme objet 
+
+
+
+Etat d'une bouteille : 
+
+
+Ouvert
+Ouvert vide
+Ouvert et Rempli
+
+Fermer
+Fermer vide
+Fermer Rempli
+
+Vide
+Vide Fermer
+vide et Ouverte
+
+
+Rempli
+Rempli et Fermer
+Rempli et ouvert

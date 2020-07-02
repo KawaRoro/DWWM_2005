@@ -1,0 +1,11 @@
+********************
+Boucle de Parcour***
+********************
+
+
+POUR <variable> ALLANT DE <min> A <max> [SAUT DE <saut>]
+<instructions>
+FIN POUR
+POUR i ALLANT DE 0 A 10 [SAUT DE 1]
+AFFICHER(''i = '', i)
+FIN POUR

@@ -1,0 +1,20 @@
+
+*********************
+Condition multiple **
+*********************
+
+
+SELON <variable>
+<valeur_1> : <instructions>
+<valeur_2> : <instructions>
+<etc> : <instructions>
+AUTREMENT : <instructions>
+FIN SELON
+
+
+SELON choixCalcul
+1 : addition(nb1, nb2)
+2 : soustraction(nb1, nb2)
+3 : quitter_programme()
+AUTREMENT : <instruction défaut>
+FIN SELON

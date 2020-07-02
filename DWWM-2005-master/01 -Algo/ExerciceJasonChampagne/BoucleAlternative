@@ -1,0 +1,15 @@
+*********************
+Boucle alternative***
+*********************
+
+
+
+REPETER
+<instructions>
+TANT QUE <instructions>
+
+
+REPETER
+AFFICHER(''i = '', i)
+i ← i + 1
+TANT QUE i < 10

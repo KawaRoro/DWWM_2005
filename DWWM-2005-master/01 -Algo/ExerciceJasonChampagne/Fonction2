@@ -1,0 +1,18 @@
+*************
+Fonction 2***
+*************
+
+
+Fonction (renvoie un résultat) :
+FONCTION <nom> (parametres…) : <type_retour>
+<declarations_variables>
+DEBUT
+<instructions>
+FIN
+
+FONCTION addition(nb1, nb2) : ENTIER
+res EST UN ENTIER
+DEBUT
+res ← nb1 + nb2
+RETOURNER res
+FIN

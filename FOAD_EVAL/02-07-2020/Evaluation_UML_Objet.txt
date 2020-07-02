@@ -1,0 +1,38 @@
+Nom : Schoenmaeker
+Prénom : Benjamin
+Section : 2005_CDA
+Date : 02/07/2020
+Score : 
+
+1 . En Programmation Orientée Objet (POO), qu'est-ce qu'une "classe" ?
+Un ensemble d'éléments (états, fonctions...) accomplissant une tâche spécifique
+
+
+2 . Dans une classe, qu'est-ce qu'un "constructeur" ?
+Une méthode permettant d'initialiser une nouvelle instance d'une classe
+
+3 . Une composition est une association
+Vrai
+
+4 . Une agrégation est une dépendance fonctionnelle…
+Faux
+
+5 . Que signifie la multiplicité " 1..* " ?
+Au moins 1
+
+6 . Avec vos propres mots, expliquez simplement les règles d'une composition.
+
+C'est une association forte. Si il y a une Agrégation forte c'est dans la majorité des cas une composition.
+
+Implique une relation de contenance entre 2 classes et un couplage très fort entre celles-ci. Si une classe ne peut pas exister par elle-même, mais
+
+doit être un membre d'une autre classe, alors elle possède une relation de composition avec la classe contenante.
+
+C'est une association qui est généralement de rapport 1:1 ou 1:N entre conteneur et composants. 
+
+Une relation de composition est indiquée par une ligne avec un "diamant" rempli.
+
+Partie 3 - Language choisi le JAVA.
+
+
+

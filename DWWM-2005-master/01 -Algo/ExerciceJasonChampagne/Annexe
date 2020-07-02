@@ -1,0 +1,12 @@
+
+
+
+Collections vides (tableau, liste, ...) :
+tab_notes EST UN TABLEAU D'ENTIERS
+liste_joueurs EST UNE LISTE DE JOUEURS
+
+
+
+● Collections pré-remplies :
+tab_nombres EST UN TABLEAU D'ENTIERS [14, 28, 366]
+inventaire EST UNE LISTE D'ITEMS [''Épée'', ''Potion de soin'']

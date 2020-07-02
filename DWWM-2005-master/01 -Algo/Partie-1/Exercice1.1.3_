@@ -1,0 +1,16 @@
+Exercice 1.1.3 :
+L’utilisateur peut saisir autant de nombres entiers qu’il souhaite. 
+Chaque nombre entier saisi doit être séparé par un espace. Le programme calcule la moyenne de tous les nombres saisis.
+
+
+Variable Entier
+n, R
+
+
+Debut
+
+Ecrire "Entrez des nombres entiers séparé par des espaces"
+Lire n
+
+PROCEDURE : R = (n1+x) /2
+Ecrire "  La moyenne des nombres est " R "

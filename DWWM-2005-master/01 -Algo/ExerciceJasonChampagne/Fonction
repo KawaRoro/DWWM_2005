@@ -1,0 +1,17 @@
+*************
+La fonction**
+*************
+
+Procédure (ne renvoie pas de résultat) :
+PROCEDURE <nom> (parametres...)
+<declarations_variables>
+DEBUT
+<instructions>
+FIN
+
+PROCEDURE addition(nb1, nb2)
+res EST UN ENTIER
+DEBUT
+res ← nb1 + nb2
+AFFICHER(''resultat = '', res)
+FIN

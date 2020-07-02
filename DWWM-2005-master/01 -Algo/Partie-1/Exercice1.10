@@ -1,0 +1,9 @@
+On souhaite écrire un programme de calcul des N premiers nombres parfaits. Un nombre est dit parfait s’il est égal à la somme de ses diviseurs, 1 compris.
+
+
+Exemple :
+6 = 1+2+3
+6 est un nombre parfait.
+L'algorithme retenu contiendra deux boucles imbriquées. Une boucle de comptage des nombres parfaits qui s'arrêtera lorsque le décompte sera atteint, la boucle interne ayant vocation à
+calculer tous les diviseurs du nombre examiné d'en faire la somme puis de tester l'égalité entre cette somme et le nombre.
+

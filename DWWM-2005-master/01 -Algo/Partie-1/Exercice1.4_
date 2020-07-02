@@ -1,0 +1,16 @@
+Lire 2 nombres a et b.
+Mettre le contenu de a dans b et celui de b dans a.
+
+
+  Variable entier  a, b, temp
+
+Debut 
+   écrire  "Saisir  a:"
+   lire  a
+   écrire  "saisir b:"
+   lire  b
+   temp <-- a
+   a <-- b
+   b <-- temp
+   écrire  "a=", a, "et b=", b
+Fin 

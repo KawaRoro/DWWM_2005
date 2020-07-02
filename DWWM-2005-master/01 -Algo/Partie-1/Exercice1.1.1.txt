@@ -1,0 +1,17 @@
+
+L’utilisateur est invité à saisir 2 nombres entier.
+Le programme calcule la moyenne des 2 nombres et affiche le résultat sous forme de nombre réel double précision.
+
+
+Variable Entier
+n1, n2 , r
+Debut
+
+Ecrire "Entrez deux nombre entier séparé par un espace"
+Lire n1
+Lire N2 
+PROCEDURE : R = (n1+n2) /2
+Ecrire "  La moyenne des deux nombres est " r "
+
+  
+Fin

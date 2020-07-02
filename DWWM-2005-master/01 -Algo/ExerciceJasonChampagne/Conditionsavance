@@ -1,0 +1,23 @@
+**********************
+Condition avancée ****
+**********************
+
+
+
+
+SI <condition> ALORS
+<instructions du si...>
+SINON SI <condition> ALORS
+<instructions du sinon si...>
+SINON
+<instructions du sinon...>
+FIN SI
+
+
+SI nombre < 0 ALORS
+AFFICHER(''Plus petit que 0'')
+SINON SI nombre > 100 ALORS
+AFFICHER(''Plus grand que 100'')
+SINON
+AFFICHER(''Entre 0 et 100'')
+FIN SI

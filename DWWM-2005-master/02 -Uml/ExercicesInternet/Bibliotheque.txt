@@ -1,0 +1,20 @@
+On désire automatiser la gestion d’une petite bibliothèque municipale. Pour cela, on a analysé son fonctionnement pour 
+obtenir la liste suivante de règles et d’affirmations :
+
+• Les adhérents ont un prénom (chaîne de caractères) et un nom (chaîne de caractères).
+• La bibliothèque comprend un ensemble de documents et un ensemble d’adhérents.
+• Les adhérents sont inscrits ou désinscrits sur une simple demande.
+• De nouveaux documents sont ajoutés régulièrement à la bibliothèque.
+• Ces documents sont soit des journaux, soit des volumes.
+• Les volumes sont soit des dictionnaires, soit des livres, soit des BD.;
+• Les documents sont caractérisés par un titre (chaîne de caractères).
+• Les volumes ont en plus un auteur (chaîne de caractères). Les Bd ont en plus un nom de destinataire 
+(chaîne de caractères).
+• Les journaux ont, outre les caractéristiques des documents, une date de parution (une date).
+• Seuls les livres sont empruntables.
+• Un adhérent peut emprunter ou restituer un livre.
+• Les adhérents peuvent emprunter des livres (et uniquement des livres) et on doit pouvoir savoir à tout moment quels sont 
+les livres empruntés par un adhérent.
+• Un adhérent peut emprunter au plus 3 livres.
+• La date de restitution d’un livre emprunté est fixée au moment du prêt. Cette date peut être prolongée sur demande.
+

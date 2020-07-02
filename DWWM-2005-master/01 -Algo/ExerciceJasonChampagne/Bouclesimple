@@ -1,0 +1,14 @@
+****************
+Boucle simple ** 
+****************
+
+
+TANT QUE <condition>
+<instructions>
+FIN TANT QUE
+
+
+TANT QUE i < 10
+AFFICHER(''i = '', i)
+i ← i + 1
+FIN TANT QUE

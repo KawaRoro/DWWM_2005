@@ -1,0 +1,24 @@
+Dans les assertions suivantes, préciser s'il s'agit d'une association, d'une agrégation ou d'une généralisation.
+
+1) Une pièce de théâtre classique comporte des actes et des scènes.
+agrégation
+
+2) Chez les artistes de music-hall, il y a des compositeurs, des interprètes et des paroliers.
+généralisation
+
+3) Un coureur automobile participe à des courses pour une écurie
+association
+
+4) Un programmeur écrit des programmes.
+Association
+
+5) Un programme COBOL est composé de divisions, de sections et de paragraphes.
+agrégation
+
+6) Les modems, les écrans, les souris et les claviers sont des organes d'entrée- sortie.
+généralisation
+
+7) Un ordinateur comprend une caisse, une alimentation, des composants électroniques, un disque dur, des organes d'entrée-sortie.
+généralisation
+
+Suite 
